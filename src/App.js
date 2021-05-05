@@ -5,21 +5,21 @@ const handsomeBasset = require("./assets/handsomeBasset.jpeg");
 
 const API = `https://dog.ceo/api/breeds/image/random`;
 
-/* 
+/*
 TODO / Feature Request: We need more pups! I know there are hundreds -- no, THOUSANDS of pups
 out there. Not saying that our handsome basset isn't perfect, but lets give some other pups a
-chance to shine. Let's make our button fetch from the provided api, and display the result in the frame. 
+chance to shine. Let's make our button fetch from the provided api, and display the result in the frame.
 
 INFO: if there are issues using hooks, this may be helpful: https://github.com/facebook/react/issues/14484
 */
 
-function App() {
+const App = () => {
   return (
     <div>
       <Body>
         <Header>
           <Logo>Sphere Pups</Logo>
-          <Button>GET MOAR PUPS</Button>
+          <Button>GET MORE PUPS</Button>
         </Header>
 
         <Frame>
