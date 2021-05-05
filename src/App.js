@@ -34,7 +34,7 @@ const App = () => {
       <Body>
           <Header>
               <Logo>Sphere Pups</Logo>
-              <Button onClick={() => fetchImageUrl()}>GET MORE PUPS</Button>
+              <Button onClick={fetchImageUrl}>GET MORE PUPS</Button>
           </Header>
           <Frame>
               <Image src={imageUrl} />
@@ -45,3 +45,5 @@ const App = () => {
 };
 
 export default App;
+
+// NOTE: The arrow functions inside the render/return slow down the performance since every time the component renders, the instance of the function is recreated in memory, which is not ideal for performance.
