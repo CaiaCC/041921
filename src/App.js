@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
+import axios from 'axios';
 
 const handsomeBasset = require("./assets/handsomeBasset.jpeg");
 
@@ -14,21 +15,29 @@ INFO: if there are issues using hooks, this may be helpful: https://github.com/f
 */
 
 const App = () => {
+  const [imageUrl, setImageUrl] = useState(handsomeBasset);
+
+  const fetchImageUrl = () => {
+    return axios.get(API)
+    .then(res => {setImageUrl(res.data.message)})
+    .catch(err => console.error(err))
+  }
+
   return (
-    <div>
-      <Body>
-        <Header>
-          <Logo>Sphere Pups</Logo>
-          <Button>GET MORE PUPS</Button>
-        </Header>
+      <div>
+          <Body>
+              <Header>
+                  <Logo>Sphere Pups</Logo>
+                  <Button onClick={() => fetchImageUrl()}>GET MORE PUPS</Button>
+              </Header>
 
-        <Frame>
-          <Image src={handsomeBasset} />
-        </Frame>
+              <Frame>
+                  <Image src={imageUrl} />
+              </Frame>
 
-        <Footer>© 1996</Footer>
-      </Body>
-    </div>
+              <Footer>© 1996</Footer>
+          </Body>
+      </div>
   );
 }
 
