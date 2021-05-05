@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import axios from 'axios';
 
-const handsomeBasset = require("./assets/handsomeBasset.jpeg");
+import handsomeBasset from "./assets/handsomeBasset.jpeg";
 
 const API = `https://dog.ceo/api/breeds/image/random`;
 
@@ -19,25 +19,22 @@ const App = () => {
 
   const fetchImageUrl = () => {
     return axios.get(API)
-    .then(res => {setImageUrl(res.data.message)})
-    .catch(err => console.error(err))
+      .then(res => {setImageUrl(res.data.message)})
+      .catch(err => console.error(err))
   }
 
   return (
-      <div>
-          <Body>
-              <Header>
-                  <Logo>Sphere Pups</Logo>
-                  <Button onClick={() => fetchImageUrl()}>GET MORE PUPS</Button>
-              </Header>
+    <Body>
+      <Header>
+        <Logo>Sphere Pups</Logo>
+          <Button onClick={() => fetchImageUrl()}>GET MORE PUPS</Button>
+      </Header>
+      <Frame>
+        <Image src={imageUrl} />
+      </Frame>
+      <Footer>© {new Date().getFullYear()}</Footer>
+    </Body>
 
-              <Frame>
-                  <Image src={imageUrl} />
-              </Frame>
-
-              <Footer>© {new Date().getFullYear()}</Footer>
-          </Body>
-      </div>
   );
 }
 
