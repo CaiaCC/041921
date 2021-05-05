@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
 import axios from 'axios';
 
-import handsomeBasset from "./assets/handsomeBasset.jpeg";
 import { Body } from "./components/StyledBody";
 import { Header } from "./components/StyledHeader";
 import { Logo } from "./components/StyledLogo";
@@ -10,6 +8,8 @@ import { Button } from "./components/StyledButton";
 import { Frame } from "./components/StyledFrame";
 import { Image } from "./components/StyledImage";
 import { Footer } from "./components/StyledFooter";
+
+import handsomeBasset from "./assets/handsomeBasset.jpeg";
 
 const API = `https://dog.ceo/api/breeds/image/random`;
 
