@@ -35,7 +35,7 @@ const App = () => {
                   <Image src={imageUrl} />
               </Frame>
 
-              <Footer>© 1996</Footer>
+              <Footer>© {new Date().getFullYear()}</Footer>
           </Body>
       </div>
   );
